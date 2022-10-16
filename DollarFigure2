@@ -1,0 +1,42 @@
+public class DollarFigure2{
+
+// $$$$$$$**************$$$$$$$
+// **$$$$$$************$$$$$$**
+// ****$$$$$**********$$$$$****
+// ******$$$$********$$$$******
+// ********$$$******$$$********
+// **********$$****$$**********
+// ************$**$************
+//SIZE 7
+
+   public static final int SIZE = 7;
+   
+   public static void main(String[] theArgs){
+      for (int rows =0; rows<SIZE; rows++){
+      
+         for(int askeOuter=0; askeOuter < rows*2; askeOuter++ ){
+            System.out.print("*");
+         }
+         
+         for (int dollar=SIZE; dollar>rows; dollar--){
+            System.out.print("$");
+            
+         }
+         for (int askeInner=SIZE*2; askeInner> rows*2; askeInner--){
+            System.out.print("*");
+         }
+         for (int dollar=SIZE; dollar>rows; dollar--){
+            System.out.print("$");
+         }
+         
+         for(int askeOuter=0; askeOuter < rows*2; askeOuter++ ){
+            System.out.print("*");
+         }
+         System.out.println();
+      
+      } 
+   
+   
+   
+   }
+}
