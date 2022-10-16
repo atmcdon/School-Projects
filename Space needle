@@ -22,7 +22,7 @@ public class Project1 {
    *  needleRoof method outputs the roof over the restaurant 
    *  This method can also be used to display the Space Needle base. 
    */
-   public static void main(String[] args) {
+   public static void main(String[] theArgs) {
       needle();
       needleRoof();
       needleBottom();
