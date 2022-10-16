@@ -1,0 +1,118 @@
+/* 
+ *  Course:  TCSS142 – Introduction to Object-Oriented Programming  
+ *  File Name:   Project1.java 
+ *  Assignment: 1 
+ *  Due Date:  OCT 18 
+ *  Instructor:  Mr. Schuessler 
+ */   
+ 
+ /** 
+  * This program draws an image of the Space Needle that will change in size based off the number used in the CONSTANCE " SIZE " given.  
+  * 
+  * @author Andrew McDonald 
+  * @version 2022/10/14 
+  */
+
+public class Project1 {
+
+   final static int SIZE = 3; //When the constance SIZE is changed,
+                              //the width and the hight of the space needle are changed to scale.
+
+  /** 
+   *  needleRoof method outputs the roof over the restaurant 
+   *  This method can also be used to display the Space Needle base. 
+   */
+   public static void main(String[] args) {
+      needle();
+      needleRoof();
+      needleBottom();
+      needle();
+      elevator();
+      needleRoof();
+   }
+   
+  /** 
+   *  needle method outputs the needle spir  
+   *  This method can also be used to display the needle spir above needleRoof and between needleBottom and elevator. 
+   */
+   public static void needle() {
+   
+      for (int i = 1; i <= SIZE; i++) {
+         for (int space = 1; space <= SIZE*3; space++) {
+         
+            System.out.print(" ");
+         }
+         
+         System.out.println("||");
+      }
+   }
+   
+  /** 
+   *  needleRoof method outputs the roof and restaurant above the needleBottom.
+   *  This method can also be used to display the Space Needle base as well. 
+   *     In the restaurant is where you eat snacks.
+   */
+   public static void needleRoof(){
+   
+      for (int line = 1; line <= SIZE; line++) {
+         for (int space = 1; space <= SIZE-line; space++) {
+            System.out.print("   ");
+         }  
+         
+         System.out.print("__/");
+         for (int j = 1; j <= line-1; j++) {
+            System.out.print(":::");
+         }
+         
+         System.out.print("||");
+         for (int j = 1; j <= line-1; j++) {
+            System.out.print(":::");
+         }
+         
+         System.out.println("\\__");
+         }
+         
+      System.out.print("|");
+      for (int i = 1; i <= SIZE; i++) {
+         System.out.print("\"\"\"\"\"\"");
+         
+      }
+      System.out.println("|");
+   }
+   
+
+  /** 
+   *  needleBottom method outputs the below needleRoof and above needle. 
+   */
+   public static void needleBottom(){
+   
+      for (int line = 1; line <= SIZE; line++) {
+         for (int space = 1; space <= (line*2)-2; space++) {
+            System.out.print(" ");
+            
+         }
+         System.out.print("\\_");
+         
+         for (int j = 1; j <= (((SIZE*3)+1) - (line*2)); j++) {
+            System.out.print("/\\");
+         }
+         System.out.println("_/");
+      }
+   }
+   
+  /** 
+   *  elevator method outputs the elevator between the base and the needle before needleBottom. 
+   *  This method can also be used to go to space, if you win a golden ticket. -Willy Wonka
+   */
+   public static void elevator() {
+   
+      for (int line = 1; line <= SIZE * 4; line++) {
+         for (int space = 1; space <= (SIZE*3)-3; space++) {
+         
+            System.out.print(" ");
+            
+         }
+         System.out.println("|%%||%%|");
+      }
+   }
+}
