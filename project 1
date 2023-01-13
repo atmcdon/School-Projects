@@ -1,0 +1,158 @@
+/** 
+ * @author sikha 
+ * TCSS 143 
+ * Instructor : Sikha Pentyala 
+ * This is a Moon class for the Lab 1 session. 
+ */ 
+ 
+public class Moon { 
+    //The private field describing the name of moon. 
+    private String nameOfMoon; 
+ 
+    // Empty Constructor 
+    public Moon() 
+    { 
+ 
+    }   
+ 
+    // Constructor with parameter to set the name of the moon 
+    public Moon(String name) 
+    { 
+        this.nameOfMoon = name; 
+    } 
+ 
+    // Accessors : Getter method for name field 
+    public String getNameOfMoon() 
+    { 
+        return nameOfMoon; 
+    } 
+ 
+    // Setter method for name field 
+    public void setNameOfMoon(String nameOfMoon) { 
+        this.nameOfMoon = nameOfMoon; 
+    } 
+}
+
+
+import java.util.ArrayList;
+//planet class
+public class Planet {
+//variable
+
+	private String name;
+	private double relativeGravity;
+	private double distanceFromSun;
+	private String moon;
+
+   private String moonName;
+//   public Moon otherMoons;
+//   private Moon moonName1;
+   //private String moonName;
+   //constructor
+   public Planet() {
+   
+   }
+   Moon otherMoons = null;
+   
+   public Planet(String name, double gravity, double distance, Moon moon ) {
+      this.name = name;
+      this.relativeGravity = gravity;
+      this.distanceFromSun = distance;
+      
+      Moon otherMoons = new Moon(moon);
+ //      this.moon1 = moon;
+//       String m = toString(moon);
+//       Moon m = new Moon(moon1);
+   //   m.Moon(moon1);
+      // this.mon = moonName1;
+//       Moon m = new Moon();
+//       m.setNameOfMoon(mon);
+      
+//       Moon m2 = new Moon();
+//       m2.setNameOfMoon(moonName2);
+
+   }
+   public String getOtherMoons(){
+      
+      return otherMoons.getNameOfMoon;
+   
+   }
+   public Planet(String name, double gravity, double distance, String moonName ) {
+      this.name = name;
+      this.relativeGravity = gravity;
+      this.distanceFromSun = distance;
+      this.moon = moonName;
+ //     Moon m = new Moon();
+ //     m.setNameOfMoon(moonName);
+   }
+   
+   public String getMoonName() {
+
+      return moon;
+   
+   }   
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getRelativeGravity() {
+		return relativeGravity;
+	}
+	public void setRelativeGravity(double relativeGravity) {
+		this.relativeGravity = relativeGravity;
+	}
+	public double getDistanceFromSun() {
+		return distanceFromSun;
+	}
+	public void setDistanceFromSun(double distanceFromSun) {
+		this.distanceFromSun = distanceFromSun;
+	}
+
+
+
+
+   
+   public double convertWeight(double w) {
+		return w * relativeGravity;
+   }
+	public boolean fartherFromSun(Planet p) {
+		if(this.distanceFromSun > p.distanceFromSun)
+		   return true;
+		else
+		   return false;
+   }
+   
+
+   
+
+}    
+
+public class Main {
+
+   public static void main(String args[]) {
+      Planet pl1 = new Planet("Earth", 9.807, 91.424, ("Moon"));
+     // Planet convertWeight = new Planet();
+     
+      String m = ("Phobos & Deimos");
+      Planet pl2 = new Planet("Mars", 3.721, 147.62, m);
+      double a = pl2.convertWeight(5.5);
+      boolean b = pl1.fartherFromSun(pl2);
+      boolean c = pl2.fartherFromSun(pl1);
+      String d = pl2.getMoonName();
+   
+      System.out.println("Planet 1 name is: " + pl1.getName() + " it has a moon called " + pl1.getMoonName());
+      System.out.println("Its Relative Gravity is: " + pl1.getRelativeGravity() + " m/s^2 | its Distance from the Sun is: " + pl1.getDistanceFromSun() + " Mil Miles\n");
+      System.out.println("Planet 2 name is: " + pl2.getName() + " has a moons called " + pl2.getMoonName());
+      System.out.println("Its Relative Gravity is: " + pl2.getRelativeGravity() + " m/s^2 | its Distance from the Sun is: " + pl2.getDistanceFromSun() + " Mil Miles\n");
+      
+      System.out.println("Weight of 5.5 LB on Earth is: " + a + " on Mars.\n");
+      
+      System.out.println("Earth is further from the sun then Mars: " + b);
+      System.out.println("Mars is further from the sun then Earth: " + c);
+      
+      System.out.println("Mars is further from the sun then Earth: " + d);
+   }   
+
+}
